@@ -290,8 +290,8 @@ typedef struct _AWSRange {
         if(self.putRequest.data != nil)
         {
             NSRange range;
-            range.location = dataRange.location;
-            range.length = dataRange.length;
+            range.location = (NSUInteger)dataRange.location;
+            range.length = (NSUInteger)dataRange.length;
             
             self.dataForPart = [self.putRequest.data subdataWithRange:range];
         }
