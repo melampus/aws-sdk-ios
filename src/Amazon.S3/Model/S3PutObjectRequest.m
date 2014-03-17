@@ -52,7 +52,7 @@
     [self setContentMD5:[decoder decodeObjectForKey:@"ContentMD5"]];
     self.generateMD5 = [decoder decodeBoolForKey:@"GenerateMD5"];
     [self setExpect:[decoder decodeObjectForKey:@"Expect"]];
-    self.expires = [decoder decodeIntegerForKey:@"Expires"];
+    self.expires = (int32_t)[decoder decodeIntegerForKey:@"Expires"];
     [self setData:[decoder decodeObjectForKey:@"Data"]];
     [self setFilename:[decoder decodeObjectForKey:@"Filename"]];
     [self setRedirectLocation:[decoder decodeObjectForKey:@"RedirectionLocation"]];
@@ -187,7 +187,7 @@
 #ifdef DEBUG
 -(void)connection:(NSURLConnection *)connection didSendBodyData:(NSInteger)bytesWritten totalBytesWritten:(NSInteger)totalBytesWritten totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite
 {
-    AMZLog(@"Wrote %d bytes to the connection", bytesWritten);
+    AMZLog(@"Wrote %ld bytes to the connection", (long)bytesWritten);
 }
 #endif
 

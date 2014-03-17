@@ -48,7 +48,7 @@
     self = [super init];
     if (self) {
         self.storageClass = theStorageClass;
-        self.transitionDays = theDays;
+        self.transitionDays = (int32_t)theDays;
     }
     return self;
 }

@@ -64,7 +64,7 @@
         }
         [allowedHeaders addObject:self.currentText];
     } else if ([elementName isEqualToString:@"MaxAgeSeconds"]) {
-        self.rule.maxAgeSeconds = [self.currentText integerValue];
+        self.rule.maxAgeSeconds = (int32_t)[self.currentText integerValue];
     }
 }
 

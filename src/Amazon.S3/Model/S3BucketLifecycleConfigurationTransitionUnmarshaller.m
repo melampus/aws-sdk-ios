@@ -32,7 +32,7 @@
     }
     else if ([elementName isEqualToString:@"Days"])
     {
-        self.transition.transitionDays = [self.currentText integerValue];
+        self.transition.transitionDays = (int32_t)[self.currentText integerValue];
     }
     else if ([elementName isEqualToString:@"Date"])
     {

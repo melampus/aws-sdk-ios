@@ -51,7 +51,7 @@
     }
     else if ([elementName isEqualToString:@"Days"])
     {
-        self.rule.expirationInDays = [self.currentText integerValue];
+        self.rule.expirationInDays = (int32_t)[self.currentText integerValue];
     }
     else if ([elementName isEqualToString:@"Date"])
     {

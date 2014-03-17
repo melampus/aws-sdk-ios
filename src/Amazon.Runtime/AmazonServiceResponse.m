@@ -110,7 +110,7 @@ NSString *const AWSClockSkewError = @"AWSClockSkewError";
         AMZLogDebug(@"%@ = [%@]", header, [[httpResponse allHeaderFields] valueForKey:header]);
     }
 
-    self.httpStatusCode = [httpResponse statusCode];
+    self.httpStatusCode = (int32_t)[httpResponse statusCode];
 
     [body setLength:0];
 

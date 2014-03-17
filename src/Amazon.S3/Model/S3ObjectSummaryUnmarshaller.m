@@ -52,7 +52,7 @@ qualifiedName:(NSString *)qName
     }
 
     if ([elementName isEqualToString:@"Size"]) {
-        self.summary.size = [self.currentText integerValue];
+        self.summary.size = (int32_t)[self.currentText integerValue];
         return;
     }
 

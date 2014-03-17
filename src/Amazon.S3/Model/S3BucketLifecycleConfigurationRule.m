@@ -59,7 +59,7 @@
         self.ruleId           = theRuleId;
         self.prefix           = thePrefix;
         self.status           = theStatus;
-        self.expirationInDays = theExpiration;
+        self.expirationInDays = (int32_t)theExpiration;
     }
     
     return self;

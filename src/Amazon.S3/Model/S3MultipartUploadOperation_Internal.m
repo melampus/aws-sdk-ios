@@ -282,7 +282,7 @@ typedef struct _AWSRange {
     };
 
     self.contentLength = [self contentLengthForRequest:self.putRequest];
-    self.numberOfParts = [self numberOfParts:self.contentLength];
+    self.numberOfParts = (int32_t)[self numberOfParts:self.contentLength];
     self.currentPartNo = self.currentPartNo != 0 ? self.currentPartNo : 1;
 
     self.retryCount = 0;
@@ -312,7 +312,7 @@ typedef struct _AWSRange {
 
     S3UploadPartRequest *uploadRequest = [[S3UploadPartRequest alloc] initWithMultipartUpload:self.multipartUpload];
     [self updateProperties:uploadRequest];
-    uploadRequest.partNumber = partNo;
+    uploadRequest.partNumber = (int32_t)partNo;
 
     if(self.dataForPart == nil)
     {

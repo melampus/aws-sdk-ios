@@ -24,6 +24,7 @@
 @end
 
 @implementation S3Response
+@dynamic responseHeader;
 
 -(id)init
 {
@@ -140,7 +141,7 @@
 {
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
 
-    self.httpStatusCode = [httpResponse statusCode];
+    self.httpStatusCode = (int32_t)[httpResponse statusCode];
 
     NSDictionary *allHeaders = [httpResponse allHeaderFields];
     
