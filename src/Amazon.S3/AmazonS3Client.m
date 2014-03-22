@@ -165,7 +165,7 @@
 
 -(S3CopyObjectResponse *)copyObject:(S3CopyObjectRequest *)copyObjectRequest
 {
-    return [self objectCopy:copyObjectRequest];
+    return [[self objectCopy:copyObjectRequest] retain];
 }
 
 -(S3CopyObjectResponse *)objectCopy:(S3CopyObjectRequest *)copyObjectRequest
@@ -351,7 +351,7 @@
 
 -(S3CopyPartResponse *)copyPart:(S3CopyPartRequest *)copyPartRequest
 {
-    return [self partCopy:copyPartRequest];
+    return [[self partCopy:copyPartRequest] retain];
 }
 
 -(S3CopyPartResponse *)partCopy:(S3CopyPartRequest *)copyPartRequest
